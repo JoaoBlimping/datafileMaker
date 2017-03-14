@@ -5,15 +5,26 @@
 #include "BasicSequence.hh"
 
 
+/**
+ * this is where the program starts and all that
+ */
 int main(int argc,char **argv)
 {
-  if (argc != 2) printf("Usage: main <number of thingos>");
+  // Check the arguments.
+  if (argc != 3)
+  {
+    printf("Usage: main <sequence length> <sequence count>\n");
+    exit(-1);
+  }
+
+  int sequenceLength = atoi(argv[1]);
+  int nSequences = atoi(argv[2]);
 
   BasicSequence gen;
-  for (int i = 0;i < 1000;i++)
+  for (int i = 0;i < nSequences;i++)
   {
     gen.setSeed(rand());
-    for (int u = 0;u < 10;u++) printf("%d",gen.next());
+    for (int u = 0;u < sequenceLength;u++) printf("%d",gen.next());
     printf("\n");
   }
 

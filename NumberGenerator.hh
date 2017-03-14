@@ -20,7 +20,7 @@ public:
   /**
    * gets the next value from the generator
    */
-  uint8_t next()=0;
+  virtual uint8_t next()=0;
 
 private:
   uint8_t byte;

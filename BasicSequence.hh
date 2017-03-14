@@ -15,7 +15,7 @@ class BasicSequence: public NumberGenerator
 public:
   virtual void setSeed(int seed);
 
-  virtual uint8_t nextByte();
+  virtual uint8_t next();
 
 private:
   int seed;
